@@ -1,9 +1,8 @@
-<template>
-  <div>22</div>
-</template>
+<template><my-hero /></template>
 
-<script>
-export default {};
+<script setup>
+import MyHero from "../components/Hero/MyHero.vue";
+import SwiperSection from "../components/SwiperSection/SwiperSection.vue";
 </script>
 
 <style lang="css" scoped></style>
