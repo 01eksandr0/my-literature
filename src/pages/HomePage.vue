@@ -1,4 +1,7 @@
-<template><my-hero /></template>
+<template>
+  <my-hero />
+  <swiper-section />
+</template>
 
 <script setup>
 import MyHero from "../components/Hero/MyHero.vue";
