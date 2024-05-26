@@ -3,10 +3,7 @@
     <li>
       <router-link to="/"
         ><v-icon
-          :class="{
-            'text-white': true,
-            'text-red-400': $route.path === '/',
-          }"
+          :fill="$route.path === '/' ? '#8a8a8a' : '#fff'"
           name="gi-bookmarklet"
           scale="2.5"
       /></router-link>
@@ -46,5 +43,3 @@ export default {
   name: "nav-links",
 };
 </script>
-
-<style lang="css" scoped></style>
