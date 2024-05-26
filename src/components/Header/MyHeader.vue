@@ -11,9 +11,9 @@
 import { onMounted, ref } from "vue";
 import MobailHeader from "../MobailHeader/MobailHeader.vue";
 import DesktopHeader from "../DesktopHeader/DesktopHeader.vue";
-const isMobail = ref(false);
+const isMobail = ref(true);
 onMounted(() => {
-  if (parseInt(getComputedStyle(document.querySelector("body")).width) < 768)
-    isMobail.value = true;
+  if (parseInt(getComputedStyle(document.querySelector("body")).width) >= 768)
+    isMobail.value = false;
 });
 </script>
