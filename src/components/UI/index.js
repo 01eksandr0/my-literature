@@ -1,3 +1,4 @@
 import Container from "./Container.vue";
+import Quote from "./Quote.vue";
 
-export default [Container];
+export default [Container, Quote];

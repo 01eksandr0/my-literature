@@ -5,7 +5,7 @@
         ><v-icon
           :class="{
             'text-white': true,
-            'text-yellow-300': $route.path === '/',
+            'text-gray-400': $route.path === '/',
           }"
           name="gi-bookmarklet"
           scale="2.5"
