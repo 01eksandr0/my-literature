@@ -7,7 +7,7 @@
       ></span>
     </button>
     <div :class="{ 'mobail-menu': true, 'mobail-menu-active': isOpen }">
-      <nav-links />
+      <nav-links :closeMenu="() => (isOpen = false)" />
     </div>
   </div>
 </template>

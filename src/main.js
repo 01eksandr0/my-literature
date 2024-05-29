@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import "tailwindcss/tailwind.css";
+import "./style.css";
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import App from "./App.vue";
 import { router } from "./router/router";

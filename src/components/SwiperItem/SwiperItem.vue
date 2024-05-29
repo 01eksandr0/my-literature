@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-[250px] bg-slate-100 rounded-md pt-[10px] pb-[10px] pl-[20px] pr-[20px] w-[310px] ml-auto mr-auto"
+    class="h-[250px] bg-slate-100 rounded-md pt-[10px] pb-[10px] pl-[20px] pr-[20px] w-[310px] ml-auto mr-auto shadow"
   >
     <h2 class="text-zinc-600 text-xl text-center">{{ item.title || "***" }}</h2>
 

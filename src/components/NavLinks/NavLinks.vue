@@ -1,7 +1,7 @@
 <template>
   <ul class="flex items-center justify-center gap-5 md:mt-[16px]">
     <li>
-      <router-link to="/"
+      <router-link to="/" @click="closeMenu"
         ><v-icon
           :fill="$route.path === '/' ? '#8a8a8a' : '#fff'"
           name="gi-bookmarklet"
@@ -9,12 +9,15 @@
       /></router-link>
     </li>
     <li>
-      <router-link to="/"
-        ><v-icon class="text-white" name="bi-search-heart-fill" scale="2.5"
+      <router-link to="/poems" @click="closeMenu"
+        ><v-icon
+          :fill="$route.path === '/poems' ? '#8a8a8a' : '#fff'"
+          name="bi-search-heart-fill"
+          scale="2.5"
       /></router-link>
     </li>
     <li>
-      <router-link to="/"
+      <router-link to="/" @click="closeMenu"
         ><v-icon class="text-white" name="co-about-me" scale="3"
       /></router-link>
     </li>
@@ -38,8 +41,6 @@
   </ul>
 </template>
 
-<script>
-export default {
-  name: "nav-links",
-};
+<script setup>
+defineProps({ closeMenu: Function });
 </script>
