@@ -10,7 +10,7 @@
 
     <div class="flex items-center justify-between">
       <p>{{ item.date }}</p>
-      <router-link to="/">Читати повністю</router-link>
+      <router-link :to="'/poems/' + item._id">Читати повністю</router-link>
     </div>
   </div>
 </template>

@@ -4,6 +4,7 @@
       <div class="flex items-center justify-between">
         <input
           class="bg-white border border-gray-300 rounded shadow p-2 flex justify-between items-center outline-none hover:border-gray-600 duration-300 ease-linear"
+          placeholder="Search"
         /><custom-select :options="options" v-model="selectedValue" />
       </div>
     </my-container>

@@ -12,6 +12,7 @@ import {
   BiInstagram,
   BiLinkedin,
   FaTelegram,
+  IoArrowBackCircleOutline,
 } from "oh-vue-icons/icons";
 const app = createApp(App);
 addIcons(
@@ -20,7 +21,8 @@ addIcons(
   CoAboutMe,
   BiInstagram,
   BiLinkedin,
-  FaTelegram
+  FaTelegram,
+  IoArrowBackCircleOutline
 );
 components.forEach((component) => {
   app.component(component.name, component);
