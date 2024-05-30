@@ -17,8 +17,11 @@
       /></router-link>
     </li>
     <li>
-      <router-link to="/" @click="closeMenu"
-        ><v-icon class="text-white" name="co-about-me" scale="3"
+      <router-link to="/about-me" @click="closeMenu"
+        ><v-icon
+          :fill="$route.path === '/about-me' ? '#8a8a8a' : '#fff'"
+          name="co-about-me"
+          scale="3"
       /></router-link>
     </li>
   </ul>
