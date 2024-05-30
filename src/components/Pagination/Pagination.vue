@@ -9,6 +9,7 @@
           aria-label="Pagination"
         >
           <button
+            @click="() => page > 1 && updatePage(page - 1)"
             class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
           >
             <span class="sr-only">Previous</span>
@@ -26,27 +27,34 @@
             </svg>
           </button>
           <button
+            v-if="page > 1"
+            @click="() => updatePage(page - 1)"
             class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
           >
-            1
+            {{ page - 1 }}
           </button>
           <button
             aria-current="page"
             class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            1
+            {{ page }}
           </button>
           <button
+            v-if="page < limit"
+            @click="() => updatePage(page + 1)"
             class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
           >
-            2
+            {{ page + 1 }}
           </button>
           <button
+            @click="() => updatePage(page + 2)"
+            v-if="page + 1 < limit"
             class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
           >
-            3
+            {{ page + 2 }}
           </button>
           <button
+            @click="() => page < limit && updatePage(page + 1)"
             class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
           >
             <span class="sr-only">Next</span>
@@ -68,6 +76,15 @@
   ></my-container>
 </template>
 
-<script></script>
+<script setup>
+import { computed } from "vue";
+import { usePoems } from "../../stores/poems";
+const page = computed(() => usePoems().getPage);
+const limit = computed(() => usePoems().getLimit);
+
+const updatePage = (newPage) => {
+  usePoems().updatePage(newPage);
+};
+</script>
 
 <style lang="css" scoped></style>

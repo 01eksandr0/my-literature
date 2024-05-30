@@ -14,7 +14,9 @@ import {
   FaTelegram,
   IoArrowBackCircleOutline,
 } from "oh-vue-icons/icons";
+import { createPinia } from "pinia";
 const app = createApp(App);
+const pinia = createPinia();
 addIcons(
   GiBookmarklet,
   BiSearchHeartFill,
@@ -28,4 +30,4 @@ components.forEach((component) => {
   app.component(component.name, component);
 });
 app.component("v-icon", OhVueIcon);
-app.use(router).mount("#app");
+app.use(router).use(pinia).mount("#app");

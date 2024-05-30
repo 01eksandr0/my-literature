@@ -5,25 +5,22 @@
         <button class="text-start" @click="$router.back()">
           <v-icon name="io-arrow-back-circle-outline" />Назад
         </button>
-        <h2 class="text-xl font-semibold text-center">{{ "***" }}</h2>
-        <p class="text-xl ml-auto mr-auto">
-          Хотіли люди собою бути<br />
-          А їм дороги не дали<br />
-          Нехай лунає відовсюду<br />
-          Що тут немає доброти<br />
-          Нехай усі про все все знають<br />
-          Нехай хочь і в глуші<br />
-          Настане ніч ніч жалю<br />
-          Коли усі побіжуть в кущі<br />
-          Нехай усі про все все знають<br />
-          Нехай хочь і в глуші<br />
-          Настане ніч ніч жалю<br />
-          Коли усі побіжуть в кущі<br />
-        </p></div
+        <h2 class="text-xl font-semibold text-center">
+          {{ poem.title || "***" }}
+        </h2>
+        <p
+          class="text-xl ml-auto mr-auto"
+          v-html="formatText(poem.text)"
+        ></p></div
     ></my-container>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { formatText } from "../helpers/textFormat.js";
+import { useRoute } from "vue-router";
+import { usePoems } from "../stores/poems";
+const poem = usePoems().getPoems.find((i) => i._id === useRoute().params.id);
+</script>
 
 <style lang="css" scoped></style>

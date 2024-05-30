@@ -5,7 +5,7 @@
     <h2 class="text-zinc-600 text-xl text-center">{{ item.title || "***" }}</h2>
 
     <p class="text-lg ml-[4px] h-[174px]">
-      <span v-html="item.poster"></span>
+      <span v-html="formatText(item.poster)"></span>
     </p>
 
     <div class="flex items-center justify-between">
@@ -16,5 +16,6 @@
 </template>
 
 <script setup>
+import { formatText } from "../../helpers/textFormat.js";
 defineProps({ item: Object });
 </script>
