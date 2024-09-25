@@ -8,11 +8,13 @@
           v-model.trim="query"
         /><custom-select :options="options" v-model="selectedValue" />
       </div>
+      <vs-btn />
     </my-container>
   </section>
 </template>
 
 <script setup>
+import vsBtn from "../vs-btn.vue";
 import { ref, watch } from "vue";
 import CustomSelect from "../CustomSelect.vue";
 import { usePoems } from "../../stores/poems.js";

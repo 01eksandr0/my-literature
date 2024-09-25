@@ -4,7 +4,7 @@
   >
     <h2 class="text-zinc-600 text-xl text-center">{{ item.title || "***" }}</h2>
 
-    <p class="text-lg ml-[4px] h-[174px]">
+    <p class="text-[16px] ml-[4px] h-[174px]">
       <span v-html="formatText(item.poster)"></span>
     </p>
 
